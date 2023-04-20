@@ -3,7 +3,8 @@ import millify from 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 
-import { Cryptocurrencies, News } from '../components';
+
+import { Cryptocurrencies, News, Loader } from '../components';
 
 const { Title } = Typography;
 
@@ -13,7 +14,7 @@ const Homepage = () => {
 
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return 'Loading..';
+  if (isFetching) return <Loader />;
 
   return (
     <>
